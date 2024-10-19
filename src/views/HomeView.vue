@@ -1,15 +1,23 @@
 <template>
-  <hello-world />
+  <div>
+    <barInicio/>
+    <bodyquest/>
+  </div>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
-
+import barInicio from '../components/barInicio.vue'
+import bodyquest from '../components/bodyQuest.vue'
   export default {
-    name: 'Home',
-
+    name: 'HomeView',
     components: {
-      HelloWorld,
+      barInicio,
+      bodyquest,
     },
   }
 </script>
+<style>
+
+
+
+</style>
