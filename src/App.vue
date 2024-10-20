@@ -1,55 +1,67 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <div>
+    <v-navigation-drawer v-model="sidebar" app>
+      <v-list>
+        <v-list-tile v-for="item in menuItems" :key="item.title" :to="item.path">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>{{ item.title }}</v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+    <v-toolbar app>
+      <v-toolbar-side-icon @click="sidebar = !sidebar"></v-toolbar-side-icon>
+      <v-toolbar-title>
+        <router-link to="/" tag="span" style="cursor: pointer">
+          {{ appTitle }}
+        </router-link>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>open_in_new</v-icon>
-      </v-btn>
-    </v-app-bar>
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn flat v-for="item in menuItems" :key="item.title" :to="item.path">
+          <v-icon left dark>{{ item.icon }}</v-icon>
+          {{ item.title }}
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+    </div>
 
-    <v-main>
-      <router-view/>
-    </v-main>
+    <v-content>
+      <v-container>
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+
   </v-app>
 </template>
 
 <script>
+//import HelloWorld from "./components/HelloWorld";
 
 export default {
-  name: 'App',
-
-  data: () => ({
-    //
-  }),
+  name: "App",
+  data() {
+    return {
+      appTitle: 'Awesome App',
+      sidebar: false,
+      menuItems: [
+        { title: 'Home', path: '/home', icon: 'home' },
+        { title: 'Sign Up', path: '/signup', icon: 'face' },
+        { title: 'Sign In', path: '/signin', icon: 'lock_open' },
+        { title: 'bodyQuest', path: '/bodyquest', icon: 'assignment' }
+      ]
+    };
+  }
 };
 </script>
+
+<style scoped>
+.v-content {
+  padding-top: 64px; /* Ajusta este valor si la barra de navegación se ve desalineada */
+}
+</style>

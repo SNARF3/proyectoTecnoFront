@@ -1,101 +1,15 @@
-<template>
-  <body>
-    <header class="bg-dark py-5">
-      <div class="container px-5">
-        <div class="row gx-5 align-items-center justify-content-center">
-          <div class="col-lg-8 col-xl-7 col-xxl-6">
-            <div class="my-5 text-center text-xl-start">
-              <h1 class="display-5 fw-bolder text-white mb-2">Sistema de vocación estudiantil</h1>
-              <br><br><br><br><br><br>
-              <br><br><br>
-              <br><br><br>
-              <br><br><br>
-              <p class="lead fw-normal text-white-50 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Quaerat harum minus sed ducimus dolorem deleniti aliquid! Repellat doloribus quo totam delectus in sit
-                odio aliquid vitae accusantium. Minus, quasi a?</p>
-            </div>
-          </div>
-          <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-            <img class="img-fluid rounded-3 my-5" src="@/assets/people.png" alt="..." />
-          </div>
-        </div>
-        <div class="buttonxd mt-n5"> <!-- Aplicar margen negativo -->
-          <pbutton class="btnxd" name="Hacer encuesta" />
-        </div>
-      </div>
-    </header>
-
-    <!-- Features section-->
-    <section class="py-5" id="features">
-      <div class="container px-5 my-5">
-        <div class="row gx-5">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h2 class="fw-bolder mb-0">A better way to start building.</h2>
-          </div>
-          <div class="col-lg-8">
-            <div class="row gx-5 row-cols-1 row-cols-md-2">
-              <div class="col mb-5 h-100">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
-                  <i class="bi bi-collection"></i>
-                </div>
-                <h2 class="h5">Featured title</h2>
-                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more
-                  text.</p>
-              </div>
-              <div class="col mb-5 h-100">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
-                  <i class="bi bi-building"></i>
-                </div>
-                <h2 class="h5">Featured title</h2>
-                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more
-                  text.</p>
-              </div>
-              <div class="col mb-5 mb-md-0 h-100">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
-                  <i class="bi bi-toggles2"></i>
-                </div>
-                <h2 class="h5">Featured title</h2>
-                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more
-                  text.</p>
-              </div>
-              <div class="col h-100">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
-                  <i class="bi bi-toggles2"></i>
-                </div>
-                <h2 class="h5">Featured title</h2>
-                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more
-                  text.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
-</template>
-
-<script>
-import barInicio from '../components/barInicio.vue'
-import pbutton from '@/components/pbutton.vue';
-export default {
-  name: 'HomeView',
-  components: {
-    barInicio,
-    pbutton,
-  },
-}
-</script>
-
-<style>
-.buttonxd {
-  width: 50%;
-}
-
-.head {
-  background-color: rgb(56, 61, 66);
-  border-radius: 20px;
-}
-
+@charset "UTF-8";
+/*!
+* Start Bootstrap - Modern Business v5.0.7 (https://startbootstrap.com/template-overviews/modern-business)
+* Copyright 2013-2023 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-modern-business/blob/master/LICENSE)
+*/
+/*!
+ * Bootstrap  v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors
+ * Copyright 2011-2022 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -11179,6 +11093,3 @@ html {
     background-repeat: no-repeat;
     min-height: 15rem;
 }
-
-
-</style>
