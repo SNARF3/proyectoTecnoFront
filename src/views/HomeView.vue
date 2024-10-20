@@ -706,6 +706,6 @@ export default {
   color: white;
 }
 
+
   </style>
-  
 
