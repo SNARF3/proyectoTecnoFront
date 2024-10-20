@@ -18,8 +18,8 @@
                                         type="password" required :error-messages="passwordError"></v-text-field>
                                 </v-flex>
                                 <v-flex class="text-xs-center" mt-4>
-                                    <!-- Usa v-btn y aplica tu clase personalizada "btn" -->
-                                    <v-btn class="btn" type="submit" block>Sign In</v-btn>
+                                    <!-- Usamos el componente pbutton -->
+                                    <pbutton name="Sign In" />
                                 </v-flex>
                             </v-layout>
                         </form>
@@ -31,14 +31,19 @@
 </template>
 
 <script>
+import pbutton from '@/components/pbutton.vue';
+
 export default {
     name: "signin",
+    components: {
+        pbutton
+    },
     data() {
         return {
             email: "",
             password: "",
             emailError: "",
-            passwordError: "",
+            passwordError: ""
         };
     },
     methods: {
@@ -60,8 +65,8 @@ export default {
                 alert("Login correcto");
                 // Aquí puedes redirigir a otra página o realizar alguna acción adicional
             }
-        },
-    },
+        }
+    }
 };
 </script>
 
@@ -74,41 +79,4 @@ export default {
     max-width: 200%;
     border-radius: 10px;
 }
-
-.btn {
-    color: rgb(0, 131, 213) !important;
-    text-transform: uppercase !important;
-    text-decoration: none !important;
-    border: 2px solid rgb(0, 131, 213) !important;
-    padding: 10px 20px !important;
-    font-size: 17px !important;
-    cursor: pointer !important;
-    font-weight: bold !important;
-    background: transparent !important;
-    position: relative !important;
-    transition: all 1s !important;
-    overflow: hidden !important;
-}
-
-.btn:hover {
-    color: white;
-}
-
-.btn::before {
-    content: "" !important;
-    position: absolute !important;
-    height: 100% !important;
-    width: 0% !important;
-    top: 0 !important;
-    left: -40px !important;
-    transform: skewX(45deg) !important;
-    background-color: rgb(0, 131, 213)!important;
-    z-index: -1 !important;
-    transition: all 1s !important;
-}
-
-.btn:hover::before {
-    width: 160% !important;
-}
-
 </style>
