@@ -17,7 +17,7 @@
             <img class="img" src="https://c0.klipartz.com/pngpicture/450/540/gratis-png-estudiante-de-preparatoria.png" alt="..." />
           </div>
         </div>
-        <div class="buttonxd mt-n5"> <!-- Aplicar margen negativo -->
+        <div class="buttonxd mt-n5">
           <pbutton class="btnxd" name="Hacer encuesta" />
         </div>
       </div>
