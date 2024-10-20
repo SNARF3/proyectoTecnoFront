@@ -8,15 +8,13 @@
               <h1 class="display-5 fw-bolder text-white mb-2">Sistema de vocación estudiantil</h1>
               <br><br><br><br><br><br>
               <br><br><br>
-              <br><br><br>
-              <br><br><br>
               <p class="lead fw-normal text-white-50 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Quaerat harum minus sed ducimus dolorem deleniti aliquid! Repellat doloribus quo totam delectus in sit
                 odio aliquid vitae accusantium. Minus, quasi a?</p>
             </div>
           </div>
           <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-            <img class="img-fluid rounded-3 my-5" src="@/assets/people.png" alt="..." />
+            <img class="img" src="https://c0.klipartz.com/pngpicture/450/540/gratis-png-estudiante-de-preparatoria.png" alt="..." />
           </div>
         </div>
         <div class="buttonxd mt-n5"> <!-- Aplicar margen negativo -->
@@ -94,6 +92,12 @@ export default {
 .head {
   background-color: rgb(56, 61, 66);
   border-radius: 20px;
+}
+img{
+  width: 100%;
+  background: transparent !important; 
+  background-image: transparent !important;
+  
 }
 
 :root {
