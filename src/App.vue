@@ -3,7 +3,7 @@
     <v-toolbar app fixed class="toolbar">
       <!-- Imagen a la izquierda en la barra -->
       <a href="https://lpz.ucb.edu.bo" target="_blank" class="logo-link">
-        <v-img src="@/assets/UCB.jpg" alt="UCB" class="logo"></v-img>
+        <v-img src="@/assets/UCB.svg" alt="UCB" class="logo"></v-img>
       </a>
 
       <v-toolbar-title>
@@ -14,7 +14,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-toolbar-items class="hidden-xs-only">
+      <v-toolbar-items>
         <span v-for="item in menuItems" :key="item.title" class="btn-toolbar" @click="goTo(item.path)">
           <v-icon left dark>{{ item.icon }}</v-icon>
           <span>{{ item.title }}</span>
@@ -39,7 +39,7 @@ export default {
       menuItems: [
         { title: 'Inicio', path: '/', icon: 'home' },
         { title: 'Inicio de sesión', path: '/signin', icon: 'lock_open' },
-      ]
+      ],
     };
   },
   methods: {
@@ -47,8 +47,8 @@ export default {
       if (this.$route.path !== path) {
         this.$router.push(path);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -56,7 +56,7 @@ export default {
 .toolbar {
   background-color: #083a63 !important; /* Color medio azul */
   padding-left: 0; /* Eliminamos el padding izquierdo de la barra */
-  height: 56px; /* Altura de la barra */
+  height: 70px; /* Altura de la barra */
 }
 
 .logo-link {
@@ -97,5 +97,22 @@ export default {
 .v-content {
   padding-top: 56px; /* Espacio para evitar solapamiento con la barra */
   min-height: calc(100vh - 56px); /* Asegura que el contenido no se superponga a la barra */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .logo {
+    max-height: 50px; /* Ajustar la altura de la imagen en pantallas pequeñas */
+  }
+
+  .btn-toolbar {
+    padding: 5px; /* Reducir el padding en pantallas pequeñas */
+  }
+
+  .v-toolbar-items {
+    display: flex; /* Mantener en flex para que los botones se alineen correctamente */
+    flex-wrap: wrap; /* Permitir que los botones se ajusten en múltiples líneas si es necesario */
+    justify-content: flex-end; /* Alinear a la derecha */
+  }
 }
 </style>
