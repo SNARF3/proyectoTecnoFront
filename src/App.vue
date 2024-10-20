@@ -31,11 +31,11 @@
     </v-toolbar>
     </div>
 
-    <v-content>
+    <v-main>
       <v-container>
         <router-view></router-view>
       </v-container>
-    </v-content>
+    </v-main>
 
   </v-app>
 </template>
@@ -50,7 +50,7 @@ export default {
       appTitle: 'Awesome App',
       sidebar: false,
       menuItems: [
-        { title: 'Home', path: '/home', icon: 'home' },
+        { title: 'Home', path: '/', icon: 'home' },
         { title: 'Sign Up', path: '/signup', icon: 'face' },
         { title: 'Sign In', path: '/signin', icon: 'lock_open' },
         { title: 'bodyQuest', path: '/bodyquest', icon: 'assignment' }
