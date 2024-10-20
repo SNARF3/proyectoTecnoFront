@@ -1,21 +1,27 @@
 <template>
-    <button class="btn" @click="$emit('click')">
+    <button class="btn" :class="{ hover: hover, clicked: clicked }" @mouseover="hover = true"
+        @mouseleave="hover = false" @click="clicked = true">
         {{ name }}
     </button>
 </template>
 
 <script>
 export default {
-    name: 'pbutton',
+    name: "pbuttonquest",
     props: {
         name: {
             type: String,
             required: true
         }
+    },
+    data() {
+        return {
+            hover: false,
+            clicked: false
+        };
     }
-}
+};
 </script>
-
 
 <style scoped>
 .btn {
@@ -29,31 +35,19 @@ export default {
     font-weight: bold !important;
     background: transparent !important;
     position: relative !important;
-    transition: all 1s !important;
+    transition: all 0.5s !important;
     overflow: hidden !important;
     align-items: center;
     width: 100%;
 }
 
-.btn:hover {
+.btn.hover {
+    background-color: green !important;
     color: white !important;
-    background-color: rgb(0, 131, 213) !important;
 }
 
-.btn::before {
-    content: "" !important;
-    position: absolute !important;
-    height: 100% !important;
-    width: 0% !important;
-    top: 0 !important;
-    left: -40px !important;
-    transform: skewX(45deg) !important;
-    background-color: rgb(0, 131, 213) !important;
-    z-index: -1 !important;
-    transition: all 1s !important;
-}
-
-.btn:hover::before {
-    width: 160% !important;
+.btn.clicked {
+    background-color: cyan !important;
+    color: white !important;
 }
 </style>
