@@ -3,7 +3,6 @@
         <header class="bg-dark py-5">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center justify-content-center">
-                    <!-- Columna principal del texto -->
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-lg-start">
                             <h1 class="display-5 fw-bolder text-white mb-2">Sistema de vocación estudiantil</h1>
@@ -15,7 +14,6 @@
                         </div>
                     </div>
 
-                    <!-- Imagen, visible también en dispositivos móviles -->
                     <div class="col-12 col-lg-4 text-center">
                         <img class="img-fluid img-responsive"
                             src="../assets/people.png"
@@ -23,16 +21,12 @@
                     </div>
                 </div>
 
-                <!-- Botón -->
                 <div class="buttonxd text-center mt-4 mt-lg-5">
-                    <pbutton class="btnxd" name="Hacer encuesta" />
+                    <pbutton class="btnxd" name="Hacer encuesta"/>
                 </div>
             </div>
         </header>
 
-
-
-        <!-- Features section-->
         <section class="py-5" id="features">
             <div class="container px-5 my-5">
                 <div class="row gx-5">
@@ -86,14 +80,17 @@
 </template>
 
 <script>
-import barInicio from '../components/barInicio.vue'
+import barInicio from '../components/barInicio.vue';
 import pbutton from '@/components/pbutton.vue';
+
 export default {
     name: 'HomeView',
     components: {
         barInicio,
         pbutton,
+        
     },
+
 }
 </script>
 
