@@ -5,7 +5,10 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
+import axios from 'axios';
 
+
+Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false
 

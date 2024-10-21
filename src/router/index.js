@@ -20,12 +20,12 @@ const routes = [
     component: Interes // Aquí registramos el componente
   },
   {
-    path: '/interes/{id}',
+    path: '/interes/:id',
     name: 'interes',
     component: Interes // Registro de la ruta para el componente Interes
   },
   {
-    path: '/preguntas/{id}',
+    path: '/preguntas/:id',
     name: 'bodyQuest',
     component: BodyQuest
     },
