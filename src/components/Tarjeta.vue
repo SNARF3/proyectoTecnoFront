@@ -29,6 +29,7 @@
 
 <script>
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import pbutton from "./pbutton.vue";
 
 export default {
@@ -39,7 +40,7 @@ export default {
     data() {
         return {
             preguntas: [],
-            seleccionadas: {}
+            seleccionadas: {}  // Objeto para almacenar las respuestas seleccionadas
         };
     },
     mounted() {
@@ -49,7 +50,7 @@ export default {
         async obtenerPreguntas() {
             try {
                 const respuesta = await axios.get("http://localhost:8000/prueba/obtener/1");
-                if (respuesta.data && respuesta.data.salida) {
+                if (respuesta.data && respuesta.data.preguntas) {
                     this.preguntas = respuesta.data.preguntas;
                 } else {
                     console.error("No se pudo obtener las preguntas correctamente.");
@@ -59,23 +60,49 @@ export default {
             }
         },
         handleSelect(preguntaId, opcionId, event) {
-            // Si el checkbox se marca, desmarcamos otros checkboxes en la misma pregunta
             if (event.target.checked) {
                 this.$set(this.seleccionadas, preguntaId, opcionId);
             } else {
-                // Deseleccionar si el checkbox se desmarca
                 if (this.seleccionadas[preguntaId] === opcionId) {
                     this.$delete(this.seleccionadas, preguntaId);
                 }
             }
         },
         isSelected(preguntaId, opcionId) {
-            // Verifica si esta opción está seleccionada
             return this.seleccionadas[preguntaId] === opcionId;
         },
-        enviarRespuestas() {
-            // Implementa la lógica para enviar las respuestas al backend
-            console.log("Respuestas enviadas:", this.seleccionadas);
+        async enviarRespuestas() {
+            const respuestas = Object.values(this.seleccionadas);
+            const data = {
+                usuario: 8,  // Cambiar por el ID del usuario si lo tienes disponible
+                respuestas: respuestas
+            };
+
+            try {
+                const respuesta = await axios.post("http://localhost:8000/respuesta/ingresar", data);
+                console.log("Respuestas enviadas:", respuesta.data);
+                
+                // Notificación de éxito con Swal
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Respuestas enviadas',
+                    text: 'Las respuestas fueron enviadas correctamente.',
+                    confirmButtonText: 'Aceptar'
+                }).then(() => {
+                    // Redirigir al inicio
+                    this.$router.push('/');
+                });
+            } catch (error) {
+                console.error("Error al enviar las respuestas:", error);
+
+                // Notificación de error con Swal
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Hubo un problema al enviar las respuestas. Por favor, inténtalo de nuevo.',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
         }
     }
 };
