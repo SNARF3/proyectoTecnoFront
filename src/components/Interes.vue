@@ -43,7 +43,7 @@ export default {
       seleccionados: [],
       loading: true,
       error: null,
-      usuario: "2",
+      usuario: "13",
     };
   },
   mounted() {
