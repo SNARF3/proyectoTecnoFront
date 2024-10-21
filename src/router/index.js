@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import bodyQuest from '@/components/bodyQuest.vue'
 import Signin from '@/components/Signin.vue'
+import BodyQuest from '@/components/bodyQuest.vue'
 
 Vue.use(VueRouter)
 
@@ -13,9 +13,9 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/bodyquest',
-    name: 'bodyquest',
-    component: bodyQuest
+    path: '/preguntas',
+    name: 'bodyQuest',
+    component: BodyQuest
     },
   { path: "/signin", 
     name: 'signin',
