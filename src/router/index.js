@@ -15,6 +15,15 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/intereses',
+    name: 'interes',
+    component: InteresForm // Aquí registramos el componente
+  },
+  {
+    path: '/bodyquest',
+    name: 'bodyquest',
+    component: bodyQuest
+
     path: '/interes',
     name: 'interes',
     component: Interes // Registro de la ruta para el componente Interes
