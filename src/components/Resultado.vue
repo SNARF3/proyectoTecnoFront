@@ -24,11 +24,7 @@
               <img src="@/assets/sis.jpg" alt="Malla Curricular" class="malla-curricular" />
             </v-flex>
   
-            <v-flex class="mb-4">
-              <h3 class="subtitulo">Duración de la Carrera</h3>
-              <p class="duracion">10 Semestres</p>
-            </v-flex>
-  
+
             <v-flex class="mb-4">
               <h3 class="subtitulo">Áreas de Estudio</h3>
               <v-list>
@@ -181,14 +177,18 @@
   .titulo {
     font-weight: bold;
     font-size: 40px; /* Aumentado tamaño del título */
-    color: #083a63; /* Color oscuro */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para mejorar visibilidad */
+    color: #fff; /* Cambiado a blanco */
+    background-color: #083a63; /* Fondo oscuro para resaltar */
+    padding: 10px; /* Espaciado interior */
+    border-radius: 5px; /* Bordes redondeados */
   }
   
   .carrera {
     font-size: 36px; /* Aumentado tamaño del subtítulo */
-    color: #083a63; /* Color oscuro */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para mejorar visibilidad */
+    color: #fff; /* Cambiado a blanco */
+    background-color: #083a63; /* Fondo oscuro para resaltar */
+    padding: 10px; /* Espaciado interior */
+    border-radius: 5px; /* Bordes redondeados */
   }
   
   .introduccion {
@@ -204,8 +204,10 @@
   
   .subtitulo {
     font-size: 28px; /* Tamaño de los subtítulos */
-    color: #083a63; /* Color oscuro */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para mejorar visibilidad */
+    color: #fff; /* Cambiado a blanco */
+    background-color: #083a63; /* Fondo oscuro para resaltar */
+    padding: 10px; /* Espaciado interior */
+    border-radius: 5px; /* Bordes redondeados */
     margin-top: 20px;
   }
   
