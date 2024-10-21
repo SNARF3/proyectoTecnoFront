@@ -125,7 +125,7 @@ export default {
 
 .light {
   background-color: white;
-  color: black;
+  color: rgb(12, 28, 52);
 }
 
 /* Media query para pantallas pequeñas */
