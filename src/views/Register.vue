@@ -184,5 +184,15 @@
   .white-text {
     color: white !important;
   }
+
+  body {
+  background-image: url('../assets/home.png'); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh; /* Asegura que el fondo cubra toda la altura */
+}
+
   </style>
   

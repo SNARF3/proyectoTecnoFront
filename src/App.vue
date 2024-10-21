@@ -115,4 +115,6 @@ export default {
     justify-content: flex-end; /* Alinear a la derecha */
   }
 }
+
+
 </style>
