@@ -6,6 +6,7 @@ import BodyQuest from '@/components/bodyQuest.vue'
 import Register from '@/views/Register.vue'
 import Interes from '@/components/Interes.vue'
 import Usuarios from '@/components/Usuarios.vue'
+import InfoModal from '@/components/InfoModal.vue'
 
 Vue.use(VueRouter)
 
@@ -14,11 +15,6 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
-  },
-  {
-    path: '/interes',
-    name: 'interes',
-    component: Interes // Aquí registramos el componente
   },
   {
     path: '/interes/:id',
@@ -43,6 +39,11 @@ const routes = [
     path: "/register",
     name: 'register',
     component: Register,
+  },
+  {
+    path: "/usuarios/datos/:id",
+    name: 'InfoModal',
+    component: InfoModal,
   }
 ]
 
