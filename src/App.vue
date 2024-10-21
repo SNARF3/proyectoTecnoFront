@@ -1,33 +1,52 @@
 <template>
-  <v-app>
-    <v-toolbar app fixed class="toolbar">
-      <a href="https://lpz.ucb.edu.bo" target="_blank" class="logo-link">
-        <v-img src="@/assets/UCB.svg" alt="UCB" class="logo"></v-img>
-      </a>
+  <v-app :dark="isDark">
+    <div :class="isDark ? 'dark' : 'light'"> <!-- Usamos la clase dinámica -->
+      <v-toolbar app fixed class="toolbar">
+        <!-- Imagen a la izquierda en la barra -->
+        <a href="https://lpz.ucb.edu.bo" target="_blank" class="logo-link">
+          <v-img src="@/assets/UCB.svg" alt="UCB" class="logo"></v-img>
+        </a>
 
-      <v-toolbar-title>
-        <router-link to="/" tag="span" class="title-link">
-          {{ appTitle }}
-        </router-link>
-      </v-toolbar-title>
+        <v-toolbar-title>
+          <router-link to="/" tag="span" class="title-link">
+            {{ appTitle }}
+          </router-link>
+        </v-toolbar-title>
 
-      <v-spacer></v-spacer>
+        <v-spacer></v-spacer>
 
-      <v-toolbar-items>
-        <span v-for="item in menuItems" :key="item.title" class="btn-toolbar" @click="goTo(item.path)">
-          <v-icon left dark>{{ item.icon }}</v-icon>
-          <span>{{ item.title }}</span>
-        </span>
-      </v-toolbar-items>
-    </v-toolbar>
+        <!-- Pasamos la prop isDark a TestComponent -->
+        <TestComponent :isDark="isDark" @toggleDark="toggleDarkMode" />
 
-    <v-content>
-      <v-container>
-        <router-view></router-view>
-      </v-container>
-    </v-content>
+        <v-toolbar-items>
+          <span v-for="item in menuItems" :key="item.title" class="btn-toolbar" @click="goTo(item.path)">
+            <v-icon left dark>{{ item.icon }}</v-icon>
+            <span>{{ item.title }}</span>
+          </span>
+        </v-toolbar-items>
+      </v-toolbar>
+
+      <v-content>
+        <v-container>
+          <router-view></router-view>
+        </v-container>
+      </v-content>
+    </div>
   </v-app>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+import TestComponent from './components/TestComponent.vue'; // Importa TestComponent
+
+// Crear variable reactiva para el modo oscuro
+const isDark = ref(false); // Inicia en modo claro
+
+// Método para alternar el modo oscuro
+const toggleDarkMode = () => {
+  isDark.value = !isDark.value; // Alterna el valor de isDark
+};
+</script>
 
 <script>
 export default {
@@ -96,6 +115,17 @@ export default {
 .v-content {
   padding-top: 56px; /* Espacio para evitar solapamiento con la barra */
   min-height: calc(100vh - 56px); /* Asegura que el contenido no se superponga a la barra */
+}
+
+/* Estilos para el tema oscuro/claro */
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.light {
+  background-color: white;
+  color: rgb(12, 28, 52);
 }
 
 /* Media query para pantallas pequeñas */
