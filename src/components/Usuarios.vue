@@ -12,7 +12,15 @@
                             :items="usuarios"
                             :loading="loading"
                             class="elevation-1"
+                            hide-default-footer
+                            :style="{ maxHeight: '400px', overflowY: 'auto' }"
                         >
+                            <template v-slot:item.accion="{ item }">
+                                <v-btn color="primary" @click="verMas(item.id)">
+                                    Más
+                                </v-btn>
+                            </template>
+
                             <template v-slot:no-data>
                                 <v-alert type="info">
                                     No se encontraron usuarios.
@@ -36,11 +44,9 @@ export default {
             loading: true,
             usuarios: [],
             headers: [
-                { text: 'ID', value: 'id' },
                 { text: 'Nombre', value: 'nombre' },
                 { text: 'Email', value: 'email' },
-                { text: 'Fecha de Respuesta', value: 'fecha_respuesta' },
-                // Agrega más columnas según la estructura de tu modelo
+                { text: 'Acción', value: 'accion', sortable: false }
             ]
         };
     },
@@ -51,13 +57,19 @@ export default {
         async obtenerUsuarios() {
             try {
                 const response = await axios.get('http://localhost:8000/usuario/obtener');
-                this.usuarios = response.data; // Asumimos que la API devuelve un array de usuarios
+                this.usuarios = response.data.map(usuario => ({
+                    id: usuario.id,
+                    nombre: `${usuario.nombres} ${usuario.apellidos}`,
+                    email: usuario.email
+                }));
             } catch (error) {
                 console.error("Error al obtener usuarios:", error);
-                // Puedes manejar el error aquí, por ejemplo, mostrando un mensaje
             } finally {
                 this.loading = false;
             }
+        },
+        verMas(id) {
+            this.$router.push(`/usuarios/datos/${id}`);
         }
     }
 };
