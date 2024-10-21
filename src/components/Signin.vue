@@ -10,16 +10,30 @@
                         <v-spacer></v-spacer>
                         <form @submit.prevent="validateLogin">
                             <v-layout column>
-                                <v-flex class="mb-4"> <!-- Añadir margen inferior -->
-                                    <v-text-field v-model="email" name="email" label="Email" id="email" type="email"
-                                        required :error-messages="emailError"></v-text-field>
+                                <v-flex class="mb-4">
+                                    <v-text-field
+                                        v-model="email"
+                                        name="email"
+                                        label="Email"
+                                        id="email"
+                                        type="email"
+                                        required
+                                        :error-messages="emailError"
+                                    ></v-text-field>
                                 </v-flex>
-                                <v-flex class="mb-4"> <!-- Añadir margen inferior -->
-                                    <v-text-field v-model="password" name="password" label="Password" id="password"
-                                        type="password" required :error-messages="passwordError"></v-text-field>
+                                <v-flex class="mb-4">
+                                    <v-text-field
+                                        v-model="password"
+                                        name="password"
+                                        label="Contraseña"
+                                        id="password"
+                                        type="password"
+                                        required
+                                        :error-messages="passwordError"
+                                    ></v-text-field>
                                 </v-flex>
-                                <v-flex class="text-xs-center mt-4"> <!-- Añadir margen superior -->
-                                    <pbutton name="Sign In" />
+                                <v-flex class="text-xs-center mt-4">
+                                    <pbutton name="Iniciar Sesión" />
                                 </v-flex>
                             </v-layout>
                         </form>
@@ -32,6 +46,7 @@
 
 <script>
 import pbutton from '@/components/pbutton.vue';
+import axios from 'axios';
 
 export default {
     name: "signin",
@@ -47,23 +62,46 @@ export default {
         };
     },
     methods: {
-        validateLogin() {
+        async validateLogin() {
             // Reseteamos los errores
             this.emailError = "";
             this.passwordError = "";
 
-            // Validamos correo y contraseña
-            if (this.email !== "admin@gmail.com") {
-                this.emailError = "Email incorrecto.";
+            // Validamos que el correo tenga un formato correcto y que la contraseña no esté vacía
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(this.email)) {
+                this.emailError = "Por favor ingrese un email válido.";
             }
-            if (this.password !== "admin") {
-                this.passwordError = "Contraseña incorrecta.";
+            if (this.password.trim() === "") {
+                this.passwordError = "La contraseña no puede estar vacía.";
             }
 
             // Si ambos son correctos
             if (!this.emailError && !this.passwordError) {
-                alert("Login correcto");
-                // Aquí puedes redirigir a otra página o realizar alguna acción adicional
+                try {
+                    // Enviamos la solicitud a la nueva API con el correo y la contraseña
+                    const response = await axios.post('http://localhost:8000/usuario/validar', {
+                        email: this.email,
+                        contrasena: this.password
+                    });
+                    
+                    // Procesamos la respuesta
+                    if (response.data.salida) {
+                        alert("Login correcto");
+                        // Redirigir a Usuarios.vue
+                        this.$router.push('/usuarios'); // Asegúrate de que '/usuarios' sea la ruta correcta
+                    } else {
+                        this.emailError = response.data.mensaje;
+                    }
+                } catch (error) {
+                    console.error("Error al validar usuario:", error);
+                    if (error.response) {
+                        // Mostrar mensaje de error específico si existe
+                        this.emailError = error.response.data.mensaje || "Error al verificar el usuario.";
+                    } else {
+                        this.emailError = "Error al verificar el usuario.";
+                    }
+                }
             }
         }
     }
@@ -78,12 +116,10 @@ export default {
 
 .mb-4 {
     margin-bottom: 1.5rem;
-    /* Añadir más espacio entre campos */
 }
 
 .mt-4 {
     margin-top: 1.5rem;
-    /* Añadir más espacio antes del botón */
 }
 
 .v-card {
@@ -96,6 +132,5 @@ export default {
     font-family: sans-serif;
     font-weight: bold;
     font-size: 50px;
-
 }
 </style>
