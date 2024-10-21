@@ -91,18 +91,21 @@
             </v-flex>
   
             <v-flex class="mb-4">
-              <h3 class="subtitulo">Descarga Información Adicional</h3>
+            <h3 class="subtitulo">Descarga Información Adicional</h3>
+            <!-- Imagen envuelta en el enlace -->
+            <a href="https://lpz.ucb.edu.bo/pregrado/ingenieria-de-sistemas/" target="_blank">
               <img src="@/assets/images.png" alt="Información Adicional" class="informacion-adicional" />
+            </a>
             </v-flex>
   
             <v-flex>
-              <v-btn color="primary" @click="volver" class="animated-button">Volver a la Página Principal</v-btn>
-            </v-flex>
-          </v-card>
-        </v-layout>
-      </v-container>
-    </div>
-  </template>
+            <v-btn color="primary" @click="volver" class="animated-button">Volver a la Página Principal</v-btn>
+          </v-flex>
+        </v-card>
+      </v-layout>
+    </v-container>
+  </div>
+</template>
   
   <script>
   export default {
