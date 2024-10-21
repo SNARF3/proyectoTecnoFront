@@ -88,8 +88,8 @@ export default {
                     // Procesamos la respuesta
                     if (response.data.salida) {
                         alert("Login correcto");
-                        // Redirigir a otra página, por ejemplo:
-                        this.$router.push('/dashboard'); // Cambia '/dashboard' por la ruta a la que desees redirigir
+                        // Redirigir a Usuarios.vue
+                        this.$router.push('/usuarios'); // Asegúrate de que '/usuarios' sea la ruta correcta
                     } else {
                         this.emailError = response.data.mensaje;
                     }

@@ -5,6 +5,7 @@ import Signin from '@/components/Signin.vue'
 import BodyQuest from '@/components/bodyQuest.vue'
 import Register from '@/views/Register.vue'
 import Interes from '@/components/Interes.vue'
+import Usuarios from '@/components/Usuarios.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,11 @@ const routes = [
   { path: "/signin", 
     name: 'signin',
     component: Signin 
+  },
+  {
+    path: '/usuarios',
+    name: 'Usuarios',
+    component: Usuarios
   },
   {
     path: "/register",
