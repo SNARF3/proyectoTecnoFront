@@ -85,10 +85,7 @@ export default {
                         contrasena: this.password
                     });
                     
-                    // Procesamos la respuesta
                     if (response.data.salida) {
-                        alert("Login correcto");
-                        // Redirigir a Usuarios.vue
                         this.$router.push('/usuarios'); // Asegúrate de que '/usuarios' sea la ruta correcta
                     } else {
                         this.emailError = response.data.mensaje;

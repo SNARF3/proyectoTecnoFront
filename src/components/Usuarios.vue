@@ -46,7 +46,7 @@ export default {
             headers: [
                 { text: 'Nombre', value: 'nombre' },
                 { text: 'Email', value: 'email' },
-                { text: 'Acción', value: 'accion', sortable: false }
+                { text: 'Mas', value: 'accion', sortable: false }
             ]
         };
     },
