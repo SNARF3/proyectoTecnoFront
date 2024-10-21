@@ -496,9 +496,11 @@ h2 {
     }
 }
 
+
 .company-contact {
     background-color: #03203e;
     /* Ajusta este color si es diferente */
     color: white;
 }
 </style>
+
