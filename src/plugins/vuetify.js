@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import es from 'vuetify/lib/locale/es';
+import '@mdi/font/css/materialdesignicons.css'; // Asegúrate de que esto esté importado
+
 
 Vue.use(Vuetify);
 
@@ -29,4 +31,11 @@ export default new Vuetify({
   icons: {
     iconfont: 'md',
   },
+
+  icons: {
+    iconfont: 'mdi', // Este es el valor por defecto, asegura que estés utilizando "mdi"
+  },
 });
+
+
+
