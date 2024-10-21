@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <v-toolbar app fixed class="toolbar">
-      <!-- Imagen a la izquierda en la barra -->
       <a href="https://lpz.ucb.edu.bo" target="_blank" class="logo-link">
         <v-img src="@/assets/UCB.svg" alt="UCB" class="logo"></v-img>
       </a>
@@ -115,4 +114,5 @@ export default {
     justify-content: flex-end; /* Alinear a la derecha */
   }
 }
+
 </style>
