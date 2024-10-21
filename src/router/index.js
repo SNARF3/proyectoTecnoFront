@@ -15,7 +15,7 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/intereses',
+    path: '/interes',
     name: 'interes',
     component: Interes // Aquí registramos el componente
   },
