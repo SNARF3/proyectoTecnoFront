@@ -49,7 +49,7 @@ export default {
     methods: {
         async obtenerPreguntas() {
             try {
-                const respuesta = await axios.get("http://localhost:8000/prueba/obtener/1");
+                const respuesta = await axios.get("http://localhost:8000/prueba/obtener/10");
                 if (respuesta.data && respuesta.data.preguntas) {
                     this.preguntas = respuesta.data.preguntas;
                 } else {
@@ -74,9 +74,30 @@ export default {
         async enviarRespuestas() {
             const respuestas = Object.values(this.seleccionadas);
             const data = {
-                usuario: 8,  // Cambiar por el ID del usuario si lo tienes disponible
+                usuario: this.$route.params.id,  // Usa el ID que recibiste
                 respuestas: respuestas
             };
+
+            // Validaciones
+            if (!data.usuario) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'El ID de usuario es inválido.',
+                    confirmButtonText: 'Aceptar'
+                });
+                return;
+            }
+
+            if (respuestas.length === 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Debes seleccionar al menos una respuesta.',
+                    confirmButtonText: 'Aceptar'
+                });
+                return;
+            }
 
             try {
                 const respuesta = await axios.post("http://localhost:8000/respuesta/ingresar", data);
