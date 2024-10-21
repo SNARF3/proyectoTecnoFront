@@ -85,8 +85,6 @@ export default {
         const respuesta = await axios.post("http://localhost:8000/interes/usuario/ingresar", payload);
 
         if (respuesta.status === 200) {
-          alert("Intereses enviados con éxito");
-          // Redirigir a BodyQuest con el id del usuario
           this.$router.push({ path: `/preguntas/${this.usuario}` });
         } else {
           this.error = "Error al enviar los intereses: " + respuesta.data.mensaje;
