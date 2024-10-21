@@ -1,20 +1,21 @@
 <template>
-    <button class="btn">
+    <button class="btn" @click="$emit('click')">
         {{ name }}
     </button>
 </template>
 
 <script>
 export default {
-    name: "pbutton",
+    name: 'pbutton',
     props: {
         name: {
             type: String,
             required: true
         }
     }
-};
+}
 </script>
+
 
 <style scoped>
 .btn {

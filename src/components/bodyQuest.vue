@@ -1,64 +1,66 @@
 <template>
-    <v-sheet class="mx-auto" width="600" elevation="3" max-width="100%">
-        <v-form ref="form" v-model="valid" lazy-validation>
-            <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required></v-text-field>
-
-            <v-select v-model="select" :items="items" :rules="[v => !!v || 'Item is required']" label="Item"
-                required></v-select>
-
-            <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree?"
-                required></v-checkbox>
-
-            <div class="d-flex flex-column">
-                <v-btn class="mt-4" color="success" block @click="validate">
-                    Validate
-                </v-btn>
-
-                <v-btn class="mt-4" color="error" block @click="reset">
-                    Reset Form
-                </v-btn>
-
-                <v-btn class="mt-4" color="warning" block @click="resetValidation">
-                    Reset Validation
-                </v-btn>
-            </div>
-        </v-form>
-    </v-sheet>
+    <div class="container1">
+        <h1>Prueba {{ info.id }}</h1>
+        <h3>{{ info.instrucciones }}</h3>
+        <div>
+            <Tarjeta/>
+        </div>
+    </div>
+    
 </template>
 
-<script>
-export default {
-    data: () => ({
-        valid: true,
-        name: 'bodyquest',
-        nameRules: [
-            v => !!v || 'Name is required',
-            v => (v && v.length <= 10) || 'Name must be 10 characters or less',
-        ],
-        select: null,
-        items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-        checkbox: false,
-    }),
+<script >
+import Tarjeta from './Tarjeta.vue';
+import axios from 'axios';
 
-    methods: {
-        async validate() {
-            const { valid } = await this.$refs.form.validate();
-
-            if (valid) alert('Form is valid');
-        },
-        reset() {
-            this.$refs.form.reset();
-        },
-        resetValidation() {
-            this.$refs.form.resetValidation();
-        },
+export default{
+    name:'bodyQuest',
+    components:{
+        Tarjeta,
     },
-};
+    data(){
+        return {
+            info: {}
+        }
+    },
+    mounted() {
+        this.obtenerDatos();
+    },
+    methods: {
+        async obtenerDatos() {
+            try {
+                const respuesta = await axios.get("http://localhost:8000/prueba/obtener/1");
+                if (respuesta.data && respuesta.data.salida) {
+                    this.info = {
+                        id: respuesta.data.id,
+                        instrucciones: respuesta.data.instrucciones
+                    };
+                } else {
+                    console.error("No se pudo obtener los datos correctamente.");
+                }
+            } catch (error) {
+                console.error("Error al obtener los datos:", error);
+            }
+        }
+    }
+
+    
+}
 </script>
 
-<style scoped>
-.v-sheet {
-    padding: 20px;
-    margin-top: 20px;
+<style>
+.container1 {
+    margin-top: 2rem; 
+    padding: 2rem; 
+    border: 1px solid #ddd;
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #0f3552; 
+}
+
+h1, h3 {
+    text-align: center; 
+    margin-bottom: 1rem;
+    color: white !important; 
 }
 </style>
