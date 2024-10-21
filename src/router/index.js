@@ -13,6 +13,11 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/intereses',
+    name: 'interes',
+    component: InteresForm // Aquí registramos el componente
+  },
+  {
     path: '/bodyquest',
     name: 'bodyquest',
     component: bodyQuest
