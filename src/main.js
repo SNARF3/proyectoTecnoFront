@@ -18,3 +18,4 @@ new Vue({
   vuetify,
   render: function (h) { return h(App) }
 }).$mount('#app')
+

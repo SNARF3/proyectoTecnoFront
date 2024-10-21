@@ -4,14 +4,13 @@ import 'vuetify/dist/vuetify.min.css';
 import es from 'vuetify/lib/locale/es';
 import '@mdi/font/css/materialdesignicons.css'; // Asegúrate de que esto esté importado
 
-
 Vue.use(Vuetify);
 
 export default new Vuetify({
   theme: {
-      options: {
-        customProperties: true,
-      },
+    options: {
+      customProperties: true, // Esto permite personalizar propiedades CSS, como los colores
+    },
     themes: {
       light: {
         primary: '#007BFF',
@@ -20,22 +19,24 @@ export default new Vuetify({
         error: '#FF5252',
         info: '#2196F3',
         success: '#4CAF50',
-        warning: '#FFC107'
+        warning: '#FFC107',
+      },
+      dark: {
+        primary: '#FF5722', // Aquí defines los colores del tema oscuro
+        secondary: '#212121',
+        accent: '#82B1FF',
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FFC107',
       },
     },
   },
-    lang: {
-      locales: { es },
-      current: 'es',
-    },
-  icons: {
-    iconfont: 'md',
+  lang: {
+    locales: { es },
+    current: 'es',
   },
-
   icons: {
-    iconfont: 'mdi', // Este es el valor por defecto, asegura que estés utilizando "mdi"
+    iconfont: 'mdi', // Asegúrate de estar usando 'mdi'
   },
 });
-
-
-
