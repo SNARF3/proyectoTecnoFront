@@ -1,30 +1,32 @@
 <template>
-    <button class="btn" :class="{ hover: hover, clicked: clicked }" @mouseover="hover = true"
-        @mouseleave="hover = false" @click="handleClick">
-        {{ name }}
-    </button>
+    <div>
+        <label class="btn" :class="{ hover: hover, clicked: isSelected }">
+            <input type="checkbox" value="{{ valor }}"/>
+        </label>
+    </div>
 </template>
 
 <script>
 export default {
-    name: "pbuttonquest",
+    name: "CheckboxQuest",
     props: {
         name: {
             type: String,
             required: true
+        },
+        isSelected: {
+            type: Boolean,
+            default: false
         }
     },
     data() {
         return {
             hover: false,
-            clicked: false
         };
     },
     methods: {
         handleClick() {
-            // Cambiar el estado de 'clicked' al hacer clic
-            this.clicked = !this.clicked;
-            this.$emit('click', this.clicked); // Emitir el estado al componente padre
+            this.$emit('select', this.name); // Emitir el nombre de la opción seleccionada
         }
     }
 };
