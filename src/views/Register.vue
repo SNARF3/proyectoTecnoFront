@@ -100,7 +100,7 @@
         this.loading = true;
         setTimeout(() => {
           this.loading = false;
-          this.$router.push({ path: '/preguntas' });
+          this.$router.push({ path: '/interes' });
         }, 1000);
       },
     },
