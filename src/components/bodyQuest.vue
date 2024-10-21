@@ -53,13 +53,14 @@ export default{
     margin-top: 2rem; 
     padding: 2rem; 
     border: 1px solid #ddd;
-    border-radius: 0.5rem; 
+    border-radius: 20px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    background-color: #f8f9fa; 
+    background-color: #0f3552; 
 }
 
 h1, h3 {
     text-align: center; 
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
+    color: white !important; 
 }
 </style>
