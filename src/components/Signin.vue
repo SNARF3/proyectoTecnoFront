@@ -4,21 +4,21 @@
             <v-layout row justify-center>
                 <v-flex xs12 sm6 md4>
                     <v-card elevation="5" class="pa-5">
-                        <v-flex class="text-xs-center" mb-3>
-                            <h1>Sign In</h1>
+                        <v-flex class="text-xs-center mb-3">
+                            <h1 class="xd">Iniciar Sesión</h1>
                         </v-flex>
+                        <v-spacer></v-spacer>
                         <form @submit.prevent="validateLogin">
                             <v-layout column>
-                                <v-flex>
+                                <v-flex class="mb-4"> <!-- Añadir margen inferior -->
                                     <v-text-field v-model="email" name="email" label="Email" id="email" type="email"
                                         required :error-messages="emailError"></v-text-field>
                                 </v-flex>
-                                <v-flex>
+                                <v-flex class="mb-4"> <!-- Añadir margen inferior -->
                                     <v-text-field v-model="password" name="password" label="Password" id="password"
                                         type="password" required :error-messages="passwordError"></v-text-field>
                                 </v-flex>
-                                <v-flex class="text-xs-center" mt-4>
-                                    <!-- Usamos el componente pbutton -->
+                                <v-flex class="text-xs-center mt-4"> <!-- Añadir margen superior -->
                                     <pbutton name="Sign In" />
                                 </v-flex>
                             </v-layout>
@@ -73,10 +73,29 @@ export default {
 <style scoped>
 .signin {
     margin-top: 250px;
+    border-radius: 20px;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+    /* Añadir más espacio entre campos */
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+    /* Añadir más espacio antes del botón */
 }
 
 .v-card {
     max-width: 200%;
-    border-radius: 10px;
+    border-radius: 20px !important;
+}
+
+.xd {
+    color: #083a63 !important;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+
 }
 </style>
