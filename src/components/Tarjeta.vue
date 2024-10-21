@@ -110,8 +110,8 @@ export default {
                     text: 'Las respuestas fueron enviadas correctamente.',
                     confirmButtonText: 'Aceptar'
                 }).then(() => {
-                    // Redirigir al inicio
-                    this.$router.push('/');
+                    // Redirigir a Resultado.vue después de que se cierre la notificación
+                    this.$router.push({ name: 'resultado' });
                 });
             } catch (error) {
                 console.error("Error al enviar las respuestas:", error);

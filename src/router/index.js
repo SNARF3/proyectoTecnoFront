@@ -6,6 +6,7 @@ import BodyQuest from '@/components/bodyQuest.vue'
 import Register from '@/views/Register.vue'
 import Interes from '@/components/Interes.vue'
 import Usuarios from '@/components/Usuarios.vue'
+import Resultado from '@/components/Resultado.vue'
 
 Vue.use(VueRouter)
 
@@ -29,7 +30,12 @@ const routes = [
     path: '/preguntas/:id',
     name: 'bodyQuest',
     component: BodyQuest
-    },
+  },
+  {
+    path: '/resultado',
+    name: 'resultado',
+    component: Resultado
+  },
   { path: "/signin", 
     name: 'signin',
     component: Signin 
