@@ -63,6 +63,112 @@ export default {
     togglePasswordVisibility() {
       this.showPassword = !this.showPassword;
     },
+<<<<<<< HEAD
+    methods: {
+      togglePasswordVisibility() {
+        this.showPassword = !this.showPassword;
+      },
+      irABodyQuest() {
+        this.loading = true;
+        setTimeout(() => {
+          this.loading = false;
+          this.$router.push({ path: '/preguntas' });
+        }, 1000);
+      },
+    },
+  };
+  </script>
+  
+  <style scoped>
+  .styled-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1), 
+                0 30px 60px rgba(0, 0, 0, 0.12),
+                0 0 100px rgba(8, 58, 99, 0.1);
+    background-color: white !important;
+    backdrop-filter: blur(10px);
+  }
+  
+  .custom-title {
+    font-weight: 900 !important;
+    color: #083a63 !important;
+    margin-bottom: 16px;
+    font-size: 2.5rem !important; /* Aumento de tamaño de fuente */
+    text-align: center;
+  }
+  
+  .subtitle-text {
+    color: #083a63 !important;
+    margin-bottom: 32px;
+    font-style: italic;
+    text-align: center;
+    opacity: 0.8;
+    font-size: 1.25rem !important; /* Aumento de tamaño de fuente */
+  }
+  
+  .input-field {
+    margin-bottom: 24px;
+  }
+  
+  .input-field :deep(.v-input__slot) {
+    background-color: white !important;
+    border: none !important; /* Elimina el borde blanco */
+  }
+  
+  .input-field :deep(input) {
+    color: #083a63 !important;
+  }
+  
+  .input-field :deep(.v-label) {
+    color: rgba(8, 58, 99, 0.6) !important;
+  }
+  
+  .password-btn {
+    margin-left: 10px;
+    color: #083a63;
+    margin-top: -35px;
+  }
+  
+  .submit-btn {
+    margin-top: 24px;
+    font-weight: bold;
+    height: 48px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #083a63 !important;
+    box-shadow: 0 4px 15px rgba(8, 58, 99, 0.2);
+  }
+  
+  .submit-btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 6px 20px rgba(8, 58, 99, 0.3);
+  }
+  
+  .submit-btn[disabled] {
+    background-color: #a0c4ff !important; /* Azul claro */
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  
+  .white-text {
+    color: white !important;
+  }
+
+  body {
+  background-image: url('../assets/home.png'); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh; /* Asegura que el fondo cubra toda la altura */
+}
+
+  </style>
+  
+=======
     async registrarUsuario() {
       this.loading = true;
       try {
@@ -168,3 +274,4 @@ export default {
   color: white !important;
 }
 </style>
+>>>>>>> 17ca457dc7cd044f782425186e67f2f4adca0d64

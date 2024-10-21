@@ -34,92 +34,82 @@
             <div class="text-center mt-5 mb-4">
                 <h2 class="text-white">Posibles resultados</h2>
             </div>
-
-            <!-- Contenedores de resultados -->
-            <div class="row mt-5">
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-custom">
-                        <img src="../assets/ciencias_tecnologia.png" class="card-img-top img-centered"
-                            alt="Ciencias y Tecnología" />
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Ciencias y Tecnología</h5>
-                            <p class="card-text text-white">
-                                Carreras sugeridas: Ingeniería, Informática, Matemáticas, Física
-                                <br />
-                                Características: Pensamiento lógico, gusto por la resolución de
-                                problemas, interés en tecnología.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-custom">
-                        <img src="../assets/humanidades_ciencias_sociales.png" class="card-img-top img-centered"
-                            alt="Humanidades y Ciencias Sociales" />
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Humanidades y Ciencias Sociales</h5>
-                            <p class="card-text text-white">
-                                Carreras sugeridas: Psicología, Sociología, Historia, Comunicación
-                                <br />
-                                Características: Interés por las personas, habilidades
-                                comunicativas, análisis social.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-custom">
-                        <img src="../assets/arte_creatividad.png" class="card-img-top img-centered"
-                            alt="Arte y Creatividad" />
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Arte y Creatividad</h5>
-                            <p class="card-text text-white">
-                                Carreras sugeridas: Diseño, Artes Visuales, Música, Arquitectura
-                                <br />
-                                Características: Expresión creativa, sensibilidad estética,
-                                originalidad.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <!-- Contenedores de resultados -->
+        <div class="row mt-5">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom card-animate">
+            <img src="../assets/ciencias_tecnologia.png" class="card-img-top img-centered" alt="Ciencias y Tecnología" />
+            <div class="card-body">
+                <h5 class="card-title text-white">Ciencias y Tecnología</h5>
+                <p class="card-text text-white">
+                Carreras sugeridas: Ingeniería, Informática, Matemáticas, Física
+                <br />
+                Características: Pensamiento lógico, gusto por la resolución de problemas, interés en tecnología.
+                </p>
             </div>
-
-            <!-- Nueva fila centrada para las últimas dos tarjetas -->
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-custom">
-                        <img src="../assets/negocios_administracion.png" class="card-img-top img-centered"
-                            alt="Negocios y Administración" />
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Negocios y Administración</h5>
-                            <p class="card-text text-white">
-                                Carreras sugeridas: Administración, Economía, Marketing,
-                                Contabilidad
-                                <br />
-                                Características: Liderazgo, organización, visión estratégica.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-custom">
-                        <img src="../assets/ciencias_salud.png" class="card-img-top img-centered"
-                            alt="Ciencias de la Salud" />
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Ciencias de la Salud</h5>
-                            <p class="card-text text-white">
-                                Carreras sugeridas: Medicina, Enfermería, Nutrición, Fisioterapia
-                                <br />
-                                Características: Vocación de servicio, interés por el bienestar,
-                                atención al detalle.
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom card-animate">
+            <img src="../assets/humanidades_ciencias_sociales.png" class="card-img-top img-centered" alt="Humanidades y Ciencias Sociales" />
+            <div class="card-body">
+                <h5 class="card-title text-white">Humanidades y Ciencias Sociales</h5>
+                <p class="card-text text-white">
+                Carreras sugeridas: Psicología, Sociología, Historia, Comunicación
+                <br />
+                Características: Interés por las personas, habilidades comunicativas, análisis social.
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom card-animate">
+            <img src="../assets/arte_creatividad.png" class="card-img-top img-centered" alt="Arte y Creatividad" />
+            <div class="card-body">
+                <h5 class="card-title text-white">Arte y Creatividad</h5>
+                <p class="card-text text-white">
+                Carreras sugeridas: Diseño, Artes Visuales, Música, Arquitectura
+                <br />
+                Características: Expresión creativa, sensibilidad estética, originalidad.
+                </p>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Nueva fila centrada para las últimas dos tarjetas -->
+        <div class="row justify-content-center mt-4">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom card-animate">
+            <img src="../assets/negocios_administracion.png" class="card-img-top img-centered" alt="Negocios y Administración" />
+            <div class="card-body">
+                <h5 class="card-title text-white">Negocios y Administración</h5>
+                <p class="card-text text-white">
+                Carreras sugeridas: Administración, Economía, Marketing, Contabilidad
+                <br />
+                Características: Liderazgo, organización, visión estratégica.
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-custom card-animate">
+            <img src="../assets/ciencias_salud.png" class="card-img-top img-centered" alt="Ciencias de la Salud" />
+            <div class="card-body">
+                <h5 class="card-title text-white">Ciencias de la Salud</h5>
+                <p class="card-text text-white">
+                Carreras sugeridas: Medicina, Enfermería, Nutrición, Fisioterapia
+                <br />
+                Características: Vocación de servicio, interés por el bienestar, atención al detalle.
+                </p>
+            </div>
+            </div>
+        </div>
+        </div>
+
 
             <!-- Nuevo texto de preguntas frecuentes -->
             <div class="text-center mt-5">
@@ -127,7 +117,6 @@
             </div>
         </div>
 
-        <!-- Preguntas Frecuentes (FAQ) -->
         <!-- Preguntas Frecuentes (FAQ) -->
         <div class="container mt-5">
             <div class="accordion" id="faqAccordion">
@@ -321,43 +310,52 @@
             </div>
         </div>
 
-        <!-- Sección de contacto de la empresa -->
-        <section class="company-contact py-5">
-            <div class="container text-center">
-                <h3>Acerca de nosotros</h3>
-                <p>Este sitio web fue desarrollado por <strong>Birbudevelopers S.A.</strong></p>
-                <p>Nos especializamos en soluciones digitales para todos los ambitos.</p>
+<!-- Sección de contacto de la empresa -->
+<section class="company-contact py-5">
+    <div class="container text-center">
+      <h3>Acerca de nosotros</h3>
+      <p>Este sitio web fue desarrollado por <strong>Birbudevelopers S.A.</strong></p>
+      <p>Nos especializamos en soluciones digitales para todos los ámbitos.</p>
 
-                <!-- Dirección de la empresa -->
-                <div class="mb-3">
-                    <h5>Dirección de nuestras oficinas:</h5>
-                    <p>Av. Ballivian 1087, Green Tower, Piso 46, La Paz, Bolivia</p>
-                </div>
+      <!-- Dirección de la empresa -->
+      <div class="mb-3">
+        <h5>Dirección de nuestras oficinas:</h5>
+        <p>Av. Ballivian 1087, Green Tower, Piso 46, La Paz, Bolivia</p>
+      </div>
 
-                <!-- Número de contacto -->
-                <div class="mb-3">
-                    <h5>Contáctanos:</h5>
-                    <p>Teléfono: <a href="tel:+59172036743">+591 72036743</a></p>
-                    <p>Email: <a href="mailto:sebastian.birbuet@ucb.edu.bo">sebastian.birbuet@ucb.edu.bo</a></p>
-                </div>
-            </div>
-        </section>
+      <!-- Número de contacto -->
+      <div class="mb-3">
+        <h5>Contáctanos:</h5>
+        <p>Teléfono: <a href="tel:+59172036743">+591 72036743</a></p>
+        <p>Email: <a href="mailto:sebastian.birbuet@ucb.edu.bo">sebastian.birbuet@ucb.edu.bo</a></p>
+      </div>
+    </div>
+
+    <!-- Imagen en la parte inferior derecha -->
+    <img src="@/assets/birbudevelopers.png" alt="Logo de la Compañía" class="logo-bottom-right" />
+  </section>
     </header>
 </template>
 
 <script>
 import pbutton from '@/components/pbutton.vue';
+import homeImage from '@/assets/home.png'; // Importar la imagen
 
 export default {
-    name: "HomeView",
-    components:{
-        pbutton,
+  name: "HomeView",
+  components: {
+    pbutton,
+  },
+  data() {
+    return {
+      homeImage, // Hacerla accesible en el componente
+    };
+  },
+  methods: {
+    Tarjeta() {
+      this.$router.push({ name: 'register' }); // Navegar al registro
     },
-    methods:{
-        Tarjeta(){
-            this.$router.push({name: 'register'})
-        }
-    }
+  },
 };
 </script>
 
@@ -502,5 +500,54 @@ h2 {
     /* Ajusta este color si es diferente */
     color: white;
 }
+
+/* Estilo para la animación de las tarjetas */
+.card-animate {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-animate:hover {
+  transform: translateY(-10px); /* Hace que la tarjeta suba un poco al pasar el ratón */
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7); /* Efecto de brillo */
+}
+
+/* Agregar un pequeño efecto de zoom a la imagen */
+.card-animate:hover .card-img-top {
+  transform: scale(1.05); /* La imagen se agranda un poco */
+  transition: transform 0.3s ease;
+}
+
+/* Sombra personalizada para las tarjetas */
+.shadow-custom {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  transition: background-color 0.3s ease;
+}
+
+/* Cambio de color de fondo en el hover */
+.card-animate:hover .card-body {
+  background-color: rgba(8, 58, 99, 0.1); /* Fondo sutil en el hover */
+}
+
+.logo-bottom-right {
+  position: absolute;
+  bottom: 45px;
+  right: 120px;
+  width: 250px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+}
+
+.app-container {
+    background-image: url('/src/assets/home.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+
 </style>
 
