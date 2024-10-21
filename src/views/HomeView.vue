@@ -355,7 +355,7 @@ export default {
     },
     methods:{
         Tarjeta(){
-            this.$router.push({name: 'bodyQuest'})
+            this.$router.push({name: 'register'})
         }
     }
 };
